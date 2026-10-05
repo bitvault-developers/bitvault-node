@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: BitVault Core consensus library
+Description: Library for the BitVault consensus protocol.
+Version: 8.26.2
+Libs: -L${libdir} -lbitvaultconsensus
+Cflags: -I${includedir}
