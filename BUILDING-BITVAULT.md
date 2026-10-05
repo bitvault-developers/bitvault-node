@@ -15,7 +15,7 @@ cmake .. && make -j"$(nproc)" && sudo make install
 
 ## 3. liboqs (built in ~/liboqs/build, static)
 ```
-git clone https://github.com/open-quantum-safe/liboqs ~/liboqs && cd ~/liboqs && git checkout main
+git clone https://github.com/open-quantum-safe/liboqs ~/liboqs && cd ~/liboqs && git checkout 0.15.0
 mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=OFF .. && make -j"$(nproc)"
 ```
 
