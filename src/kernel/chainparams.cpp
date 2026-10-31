@@ -267,6 +267,7 @@ public:
             {
                 { 0,  uint256S("0xa895abd339dd3ff5e777f92ca892ec24f566e73da08779eb82264cd146bd06db") }, // genesis
                 { 25000, uint256S("0x0408baec249a996c68fedf275ed7949aa4b15e2bd57a5b3ed3c860df56b483bd") }, // h=25000 Oct 1 2026 - BVT history checkpoint
+                { 43076, uint256S("0x33d3e6cf3cac6c3607112963cfe886fb00272ebd60df8b5190121bc876cd0ce5") }, // h=43076 19 Oct 2026 - chain frozen until launch
             }
         };
 

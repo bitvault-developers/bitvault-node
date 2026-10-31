@@ -29,7 +29,7 @@
 #endif
 
 //! git will put "#define GIT_COMMIT_ID ..." on the next line inside archives. 
-#define GIT_COMMIT_ID "ba3ee3abda4da1e32b554e0c277693ebb10b5eec"
+#define GIT_COMMIT_ID "67095d1de878bdd50f8c9de751d937080764f6c4"
 
 #ifdef BUILD_GIT_TAG
     #define BUILD_DESC BUILD_GIT_TAG

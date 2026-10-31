@@ -4167,6 +4167,12 @@ static bool ContextualCheckBlockHeader(const CBlockHeader& block, BlockValidatio
         return state.Invalid(BlockValidationResult::BLOCK_TIME_FUTURE, "time-too-new", "block timestamp too far in the future");
     }
 
+    // BVT_PRELAUNCH_FREEZE: no new mainnet blocks above height 43076 before the official launch
+    // (6 Feb 2027 18:30 UTC, unix 1801938600). Switches off by itself at that moment.
+    if (chainman.GetParams().GetChainType() == ChainType::MAIN && nHeight > 43076 && block.GetBlockTime() < 1801938600) {
+        return state.Invalid(BlockValidationResult::BLOCK_INVALID_HEADER, "bitvault-prelaunch", "BVT mining opens on 7 February 2027");
+    }
+
     // Reject blocks with outdated version
     if ((block.nVersion < 2 && DeploymentActiveAfter(pindexPrev, chainman, Consensus::DEPLOYMENT_HEIGHTINCB)) ||
         (block.nVersion < 3 && DeploymentActiveAfter(pindexPrev, chainman, Consensus::DEPLOYMENT_DERSIG)) ||
