@@ -115,6 +115,7 @@ public:
 
         // ----- CUSTOM HALVING INTERVAL -----
         consensus.nSubsidyHalvingInterval = 5259600; // 10 years (60s blocks)
+        consensus.nBVTReward3Height = 43077; // BVT_REWARD3: 3 BVT per block from the first block after launch
 
         // ----- BITVAULT MAINNET ACTIVATION HEIGHTS -----
         consensus.BIP34Height = 1;
@@ -589,6 +590,7 @@ public:
         consensus.signet_challenge.clear();
 
         consensus.nSubsidyHalvingInterval = 21024000; // 10 years (15 sec blocks)
+        consensus.nBVTReward3Height = 200; // BVT_REWARD3 on regtest (tests)
 
         consensus.BIP34Height = 1;
         consensus.BIP34Hash = uint256();

@@ -1768,11 +1768,15 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams, i
     // Feature 1: Miner Diversity Bonus (+5% or +10% for rare algorithms)
     // Fork height 50: before = 4000 BVT (preserves old chain), after = 3000 BVT + diversity bonus
     static const int BITVAULT_SUBSIDY_FORK_HEIGHT = 50;
-    CAmount nSubsidy = (nHeight < BITVAULT_SUBSIDY_FORK_HEIGHT) ? 4000 * COIN : 3000 * COIN;
+    // BVT_REWARD3 (decided 1 Nov 2026): 3 BVT per block from nBVTReward3Height (mainnet 43,077, the first block after launch).
+    // Same split (10% miner, 90% fixed addresses, built in miner.cpp from this amount) and the same diversity bonus.
+    const bool bvt_reward3 = nHeight >= consensusParams.nBVTReward3Height;
+    CAmount nSubsidy = bvt_reward3 ? 3 * COIN : ((nHeight < BITVAULT_SUBSIDY_FORK_HEIGHT) ? 4000 * COIN : 3000 * COIN);
     int halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
     if (halvings >= 64) return 0;
     nSubsidy >>= halvings;
-    if (nSubsidy < COIN) { nSubsidy = 0; }
+    // The old 1-BVT floor stays for the old reward only; with 3 BVT it would stop all rewards after two halvings.
+    if (nSubsidy < COIN && !bvt_reward3) { nSubsidy = 0; }
     // Diversity bonus only applies post-fork
     if (nHeight >= BITVAULT_SUBSIDY_FORK_HEIGHT && nAlgo >= 0 && nAlgo < NUM_ALGOS && algoCounts != nullptr) {
         int bonusPct = GetDiversityBonusPercent(nAlgo, algoCounts);

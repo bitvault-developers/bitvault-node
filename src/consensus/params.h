@@ -83,6 +83,8 @@ struct BIP9Deployment {
 struct Params {
     uint256 hashGenesisBlock;
     int nSubsidyHalvingInterval;
+    /** BVT_REWARD3: from this height the block reward is 3 BVT (mainnet: 43,077, the first block after launch) */
+    int nBVTReward3Height{std::numeric_limits<int>::max()};
     /**
      * Hashes of blocks that
      * - are known to be consensus valid, and
