@@ -1,20 +1,34 @@
-# Security Policy
+# Security policy
 
-## Supported Versions
+## Supported versions
+| Version | Supported |
+|---|---|
+| v8.26.13 (latest release) | Yes |
+| v8.26.12 and older | No. They stop at block 43,076, so please upgrade. |
 
-See our website for versions of BitVault Core that are currently supported with
-security updates: https://bitvault.org/en/lifecycle/#schedule
+## Reporting a vulnerability
+Please do **not** open a public issue for a security problem.
 
-## Reporting a Vulnerability
+Email **support@bitvault.club** with a subject that starts with `SECURITY:` and include:
+- what is affected (node version, service or web address),
+- the steps to reproduce it,
+- what an attacker could do with it.
 
-To report security issues send an email to security@bitvault.org (not for support).
+If you want to send the details encrypted, say so in your first email and we will reply with a key.
 
-The following keys may be used to communicate sensitive information to developers:
+## What happens next
+- We confirm that we received your report within 3 days.
+- We investigate, keep you informed, and fix confirmed problems in a new release.
+- Please give us reasonable time to ship a fix before you publish anything. 90 days is our default.
+- With your permission, we thank you by name (or handle) in the release notes.
 
-| Name | Fingerprint |
-|------|-------------|
-| Pieter Wuille | 133E AC17 9436 F14A 5CF1  B794 860F EB80 4E66 9320 |
-| Michael Ford | E777 299F C265 DD04 7930  70EB 944D 35F9 AC3D B76A |
-| Andrew Chow | 1528 1230 0785 C964 44D3  334D 1756 5732 E08E 5E41 |
+## Scope
+In scope: this node software, and the public BitVault services listed at https://bitvault.club/security/report/.
 
-You can import a key by running the following command with that individual’s fingerprint: `gpg --keyserver hkps://keys.openpgp.org --recv-keys "<fingerprint>"` Ensure that you put quotes around fingerprints containing spaces.
+Out of scope: denial-of-service or load testing against our public servers, spam, social engineering, and physical attacks.
+
+## Upstream fixes
+BitVault is built on Bitcoin Core and DigiByte Core. We follow the Bitcoin Core security advisories
+(https://bitcoincore.org/en/security-advisories/) and apply the fixes that affect BitVault in our releases.
+
+Full policy: https://bitvault.club/security/report/
