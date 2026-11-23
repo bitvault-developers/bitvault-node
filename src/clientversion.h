@@ -17,7 +17,8 @@
 #define CLIENT_NAME "BitVault"
 #define CLIENT_VERSION_MAJOR 8
 #define CLIENT_VERSION_MINOR 26
-#define CLIENT_VERSION_BUILD 2
+#undef CLIENT_VERSION_BUILD
+#define CLIENT_VERSION_BUILD 14
 #define CLIENT_VERSION (CLIENT_VERSION_MAJOR * 10000 + CLIENT_VERSION_MINOR * 100 + CLIENT_VERSION_BUILD)
 
 //! Set to true for release, false for prerelease or test build

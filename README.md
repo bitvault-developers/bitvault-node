@@ -21,7 +21,7 @@ A new node downloads the whole chain from block 0 over the normal network protoc
   validator's public key, which is built into the node.
 - Blocks up to height 43,076 (the last built-in checkpoint) were mined under earlier difficulty rules and keep the
   difficulty they were mined with. The checkpoints tie them to the one real chain, and every later block follows today's rule.
-- **Use v8.26.13 or newer.** v8.26.11 and v8.26.12 stop at block 43,076.
+- **Use v8.26.14 (latest) or v8.26.13.** v8.26.11 and v8.26.12 stop at block 43,076.
 
 ## Network parameters
 | | |
@@ -41,9 +41,6 @@ A new node downloads the whole chain from block 0 over the normal network protoc
 **Fees.** The node's built-in wallet pays at least 0.1 BVT per kvB (10,000 sat/vB), so a normal payment of about 141 vB
 costs about 0.0141 BVT. With default settings a node relays transactions from 100 sat/vB.
 Full replace-by-fee is on, so never credit unconfirmed payments.
-
-**Version label.** The v8.26.13 program still reports the old label `8.26.2` (`/BitVault:8.26.2/`, protocol 70019).
-Identify the build by its SHA-256 in the release's SHA256SUMS. The label will be corrected in the next release.
 
 ## Download and check
 Download `bitvaultd`, `bitvault-cli` and `SHA256SUMS` from the latest release on this page, then:

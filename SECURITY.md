@@ -3,7 +3,8 @@
 ## Supported versions
 | Version | Supported |
 |---|---|
-| v8.26.13 (latest release) | Yes |
+| v8.26.14 (latest release) | Yes |
+| v8.26.13 | Yes |
 | v8.26.12 and older | No. They stop at block 43,076, so please upgrade. |
 
 ## Reporting a vulnerability
